@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-cinema-black text-cinema-text font-body antialiased;
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-cinema-deep; }
+  ::-webkit-scrollbar-thumb { @apply bg-cinema-border rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-cinema-dim; }
+  ::selection { @apply bg-cinema-gold text-cinema-black; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-cinema-gold text-cinema-black font-semibold px-5 py-2.5 rounded-lg
+           hover:bg-cinema-gold-dim transition-all duration-200 active:scale-95
+           flex items-center gap-2 text-sm;
+  }
+  .btn-ghost {
+    @apply bg-transparent border border-cinema-border text-cinema-text px-5 py-2.5
+           rounded-lg hover:border-cinema-gold hover:text-cinema-gold transition-all
+           duration-200 flex items-center gap-2 text-sm;
+  }
+  .card {
+    @apply bg-cinema-card border border-cinema-border rounded-xl overflow-hidden
+           transition-all duration-300 hover:border-cinema-gold/30
+           hover:shadow-[0_0_30px_rgba(245,197,24,0.08)];
+  }
+  .input-base {
+    @apply bg-cinema-deep border border-cinema-border rounded-lg px-4 py-2.5
+           text-cinema-text placeholder-cinema-dim focus:outline-none
+           focus:border-cinema-gold/60 focus:ring-1 focus:ring-cinema-gold/20
+           transition-all duration-200 text-sm w-full;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .skeleton {
+    @apply bg-gradient-to-r from-cinema-card via-cinema-border to-cinema-card
+           bg-[length:200%_100%] animate-shimmer rounded;
+  }
+  .section-title {
+    @apply font-display text-2xl font-semibold text-cinema-text mb-6;
+  }
+  .nav-link {
+    @apply flex items-center gap-2 px-3 py-2 rounded-lg text-cinema-muted
+           hover:text-cinema-text hover:bg-cinema-card transition-all duration-200 text-sm font-medium;
+  }
+  .nav-link.active {
+    @apply text-cinema-gold bg-cinema-card border border-cinema-gold/20;
+  }
+}
