@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Toast from './components/Toast'
 
 // Lazy load pages
@@ -28,9 +29,9 @@ function PageLoader() {
 export default function App() {
   return (
     <AppProvider>
-      <div className="min-h-screen bg-cinema-black">
+      <div className="min-h-screen bg-cinema-black flex flex-col">
         <Navbar />
-        <main>
+        <main className="flex-1">
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -44,6 +45,7 @@ export default function App() {
             </Routes>
           </Suspense>
         </main>
+        <Footer />
         <Toast />
       </div>
     </AppProvider>
