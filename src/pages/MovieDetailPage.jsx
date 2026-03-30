@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import {
   Star, Calendar, Clock, Globe, Heart, Bookmark, Eye, EyeOff,
-  ChevronLeft, Play, Users, Film, ExternalLink
+  ChevronLeft, Play, Users, Clapperboard, ExternalLink
 } from 'lucide-react'
 import { tmdbApi, getBackdropUrl, getPosterUrl } from '../utils/tmdb'
 import { useMovies } from '../hooks/useMovies'
@@ -81,7 +81,7 @@ export default function MovieDetailPage() {
                 <img src={poster} alt={movie.title} className="w-full" />
               ) : (
                 <div className="aspect-[2/3] bg-cinema-card flex items-center justify-center">
-                  <Film size={48} className="text-cinema-dim" />
+                  <Clapperboard size={48} className="text-cinema-dim" />
                 </div>
               )}
             </div>

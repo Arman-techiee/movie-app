@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { Search, Bookmark, Heart, Star, Menu, X, Film, TrendingUp, Home } from 'lucide-react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { Search, Bookmark, Heart, Star, Menu, X, TrendingUp, Home } from 'lucide-react'
 import { useApp } from '../context/AppContext'
+import BrandLogo from './BrandLogo'
 
 export default function Navbar() {
   const [query, setQuery] = useState('')
@@ -39,14 +40,7 @@ export default function Navbar() {
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 mr-2 flex-shrink-0 group">
-          <div className="w-8 h-8 bg-cinema-gold rounded-lg flex items-center justify-center shadow-[0_0_12px_rgba(245,197,24,0.4)] group-hover:shadow-[0_0_20px_rgba(245,197,24,0.6)] transition-shadow">
-            <Film size={16} className="text-cinema-black" />
-          </div>
-          <span className="font-display text-lg font-semibold hidden sm:block">
-            Cine<span className="text-cinema-gold">Vault</span>
-          </span>
-        </Link>
+        <BrandLogo compact className="mr-2 flex-shrink-0" />
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1 flex-1">
