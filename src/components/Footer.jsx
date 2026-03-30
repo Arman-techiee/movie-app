@@ -40,7 +40,7 @@ export default function Footer() {
               <ExternalLink size={14} />
             </a>
             <span className="text-cinema-muted">
-              Built by Arman Techiee
+              Built by Arman Khan
             </span>
           </div>
         </div>
