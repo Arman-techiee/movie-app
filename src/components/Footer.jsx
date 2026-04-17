@@ -30,7 +30,7 @@ export default function Footer() {
               Project
             </span>
             <a
-              href="https://github.com/armanroot/movie-app.git"
+              href="https://github.com/armancore/movie-app.git"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 text-cinema-text hover:text-cinema-gold transition-colors"
